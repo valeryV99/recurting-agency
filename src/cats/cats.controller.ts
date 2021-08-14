@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { CatsService } from './cats.service';
 import { CreateCatDto } from './dto/create-cat.dto';
@@ -15,14 +16,15 @@ import { UpdateCatDto } from './dto/update-cat.dto';
 export class CatsController {
   constructor(private readonly catsService: CatsService) {}
 
-  @Post()
-  create(@Body() createCatDto: CreateCatDto) {
-    return this.catsService.create(createCatDto);
+  @Post('/create')
+  create(@Body() { email, password }: CreateCatDto) {
+    return this.catsService.create(email, password);
   }
 
   @Get()
-  findAll() {
-    return this.catsService.findAll();
+  findAll(@Query('email') email: string) {
+    console.log(email, 'email');
+    return this.catsService.findAll(email);
   }
 
   @Get(':id')
