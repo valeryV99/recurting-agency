@@ -1,4 +1,5 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import * as fs from 'fs';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
@@ -49,7 +50,9 @@ class ConfigService {
         migrationsDir: 'src/migration',
       },
 
-      ssl: this.isProduction(),
+      ssl: {
+        ca: fs.readFileSync('certificate.cer'),
+      },
     };
   }
 }
