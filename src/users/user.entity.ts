@@ -5,18 +5,27 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
+  OneToMany, OneToOne,
 } from 'typeorm';
+import { Report } from '../reports/report.entity';
+import { Recruiter } from '../recruiters/recruiter.entity';
 
 @Entity()
-export class Cat {
-  @PrimaryGeneratedColumn('uuid')
+export class User {
+  @PrimaryGeneratedColumn()
   id: number;
 
-  @Column('text')
+  @Column()
   email: string;
 
-  @Column('text')
+  @Column()
   password: string;
+
+  @Column({ default: true })
+  admin: boolean;
+
+  @OneToMany(() => Report, (report) => report.user)
+  reports: Report[];
 
   @AfterInsert()
   logInsert() {

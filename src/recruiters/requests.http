@@ -1,0 +1,16 @@
+POST http://localhost:3000/recruiters
+content-type: application/json
+
+{
+  "photo": "photo",
+  "surname": "surname",
+  "name": "name",
+  "patronymic": "patronymic",
+  "birth": "Wed Aug 18 2021 09:11:48",
+  "residence_address": "residence_address",
+  "education": "education",
+  "position": "position"
+}
+
+### Get the recruiters
+GET http://localhost:3000/recruiters
