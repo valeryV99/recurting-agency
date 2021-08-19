@@ -7,16 +7,21 @@ import { User } from '../users/user.entity';
 
 @Injectable()
 export class RecruitersService {
-  constructor(@InjectRepository(Recruiter) private repo: Repository<Recruiter>) {}
+  constructor(
+    @InjectRepository(Recruiter) private repo: Repository<Recruiter>,
+  ) {}
+
+  findOne(id: string) {
+    return this.repo.findOne(id);
+  }
 
   getAll() {
     return this.repo.find();
   }
 
   create(recruiterDto: CreateRecruiterDto, user: User) {
-    const recruiter = this.repo.create(recruiterDto)
-    recruiter.user = user;
-    console.log(recruiter, 'recruiter');
+    const recruiter = this.repo.create(recruiterDto);
+    recruiter.id = user.id;
     return this.repo.save(recruiter);
   }
 }

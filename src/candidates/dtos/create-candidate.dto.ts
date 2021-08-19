@@ -1,6 +1,6 @@
 import { IsString } from 'class-validator';
 
-export class CreateRecruiterDto {
+export class CreateCandidateDto {
   @IsString()
   photo: string;
 
@@ -23,5 +23,8 @@ export class CreateRecruiterDto {
   education: string;
 
   @IsString()
-  position: string;
+  possible_position: string;
+
+  @IsString()
+  status: string;
 }

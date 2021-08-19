@@ -1,20 +1,10 @@
-import {
-  AfterInsert,
-  AfterRemove,
-  AfterUpdate,
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  OneToMany,
-  OneToOne,
-  JoinColumn,
-} from 'typeorm';
-import { User } from '../users/user.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Candidate } from '../candidates/candidate.entity';
 
 @Entity()
 export class Recruiter {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   photo: string;
@@ -40,7 +30,6 @@ export class Recruiter {
   @Column()
   position: string;
 
-  @OneToOne(() => User)
-  @JoinColumn()
-  user: User;
+  @OneToMany(() => Candidate, (candidate) => candidate.recruiter)
+  candidates: Candidate[];
 }
