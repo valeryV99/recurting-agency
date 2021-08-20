@@ -1,8 +1,9 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 
-export class RecruiterDto {
+export class CandidateDto {
   @Expose()
   id: string;
+
   @Expose()
   photo: string;
   @Expose()
@@ -18,5 +19,10 @@ export class RecruiterDto {
   @Expose()
   education: string;
   @Expose()
-  position: string;
+  possible_position: string;
+  @Expose()
+  status: string;
+  @Transform(({ obj }) => obj.recruiter.id)
+  @Expose()
+  recruiterId: string;
 }

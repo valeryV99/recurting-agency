@@ -1,0 +1,18 @@
+import { Controller, Post, Body, UseGuards } from '@nestjs/common';
+import { InterviewsService } from './interviews.service';
+import { AuthGuard } from '../guards/auth.guard';
+import { Serialize } from '../interceptors/serialize.interceptor';
+import { CreateInterviewDto } from './dtos/create-interview.dto';
+import { InterviewDto } from './dtos/interview.dto';
+
+@Controller('interviews')
+export class InterviewsController {
+  constructor(private interviewService: InterviewsService) {}
+
+  @Post()
+  @UseGuards(AuthGuard)
+  @Serialize(InterviewDto)
+  createInterview(@Body() body: CreateInterviewDto) {
+    return this.interviewService.create(body);
+  }
+}

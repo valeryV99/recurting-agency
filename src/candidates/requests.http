@@ -1,0 +1,14 @@
+POST http://localhost:3000/candidates
+content-type: application/json
+
+{
+  "photo": "photo-1",
+  "surname": "surname-1",
+  "name": "name-1",
+  "patronymic": "patronymic-1",
+  "birth": "birth-1",
+  "residence_address": "residence_address-1",
+  "education": "education-1",
+  "possible_position": "possible_position-1",
+  "status": "status-1"
+}

@@ -5,15 +5,14 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToMany, OneToOne,
+  OneToMany,
 } from 'typeorm';
 import { Report } from '../reports/report.entity';
-import { Recruiter } from '../recruiters/recruiter.entity';
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   email: string;
