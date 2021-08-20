@@ -1,5 +1,12 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Recruiter } from '../recruiters/recruiter.entity';
+import { Interview } from '../interviews/interview.entity';
 
 @Entity()
 export class Candidate {
@@ -35,4 +42,7 @@ export class Candidate {
 
   @ManyToOne(() => Recruiter, (recruiter) => recruiter.candidates)
   recruiter: Recruiter;
+
+  @OneToMany(() => Interview, (interview) => interview.candidate)
+  interview: Interview[];
 }
