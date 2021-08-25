@@ -3,7 +3,6 @@ import { Expose, Transform } from 'class-transformer';
 export class CandidateDto {
   @Expose()
   id: string;
-
   @Expose()
   photo: string;
   @Expose()

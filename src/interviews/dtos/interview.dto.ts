@@ -6,10 +6,11 @@ export class InterviewDto {
   @Expose()
   date: Date;
 
-  @Transform(({ obj }) => {
-    console.log(obj, 'obj');
-    return obj.candidateId;
-  })
+  @Transform(({ obj }) => obj.candidateId)
   @Expose()
   candidateId: string;
+
+  @Transform(({ obj }) => obj.positionId)
+  @Expose()
+  positionId: string;
 }

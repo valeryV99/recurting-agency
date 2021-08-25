@@ -4,7 +4,7 @@ import { User } from '../users/user.entity';
 @Entity()
 export class Report {
   @PrimaryGeneratedColumn('uuid')
-  id: number;
+  id: string;
 
   @Column({ default: false })
   approved: boolean;

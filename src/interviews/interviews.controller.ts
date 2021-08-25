@@ -7,12 +7,12 @@ import { InterviewDto } from './dtos/interview.dto';
 
 @Controller('interviews')
 export class InterviewsController {
-  constructor(private interviewService: InterviewsService) {}
+  constructor(private interviewsService: InterviewsService) {}
 
   @Post()
   @UseGuards(AuthGuard)
   @Serialize(InterviewDto)
   createInterview(@Body() body: CreateInterviewDto) {
-    return this.interviewService.create(body);
+    return this.interviewsService.create(body);
   }
 }
