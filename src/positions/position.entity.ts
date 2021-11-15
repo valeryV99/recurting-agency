@@ -32,7 +32,10 @@ export class Position {
   requirements: string;
 
   @Column()
-  date_of_creation: Date;
+  startDate: Date;
+
+  @Column()
+  endDate: Date;
 
   @OneToMany(() => Interview, (interview) => interview.candidate)
   interview: Interview[];

@@ -17,7 +17,10 @@ export class CreatePositionDto {
   requirements: string;
 
   @IsDateString()
-  date_of_creation: Date;
+  startDate: Date;
+
+  @IsDateString()
+  endDate: Date;
 
   @IsString()
   customerId: string;

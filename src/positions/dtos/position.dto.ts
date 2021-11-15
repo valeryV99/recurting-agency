@@ -20,7 +20,10 @@ export class PositionDto {
   requirements: string;
 
   @Expose()
-  date_of_creation: Date;
+  startDate: Date;
+
+  @Expose()
+  endDate: Date;
 
   @Expose()
   customerId: string;

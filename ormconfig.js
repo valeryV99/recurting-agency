@@ -1,9 +1,9 @@
 var dbConfig = {
-  synchronize: false,
-  migrations: ['migrations/*.js'],
-  cli: {
-    migrationsDir: 'migrations',
-  },
+  synchronize: true,
+  // migrations: ['migrations/*.js'],
+  // cli: {
+  //   migrationsDir: 'migrations',
+  // },
 };
 
 // POSTGRES_HOST=127.0.0.1
@@ -17,36 +17,38 @@ var dbConfig = {
 
 switch (process.env.NODE_ENV) {
   case 'development':
+    console.log(1)
     Object.assign(dbConfig, {
       type: 'postgres',
 
       host: '127.0.0.1',
-      port: 5432,
+      port: 5439,
       username: 'postgres',
       password: 'mysecretpassword',
-      database: 'my_database',
+      database: 'postgres',
 
-      migrationsTableName: 'migration',
-      migrations: ['src/migration/*.ts'],
+      // migrationsTableName: 'migration',
+      // migrations: ['src/migration/*.ts'],
       cli: {
         migrationsDir: 'src/migration',
       },
 
       ssl: false,
       entities: ['**/*.entity.js'],
-      // synchronize: true,
+      synchronize: true,
     });
     break;
   case 'test':
-    Object.assign(dbConfig, {
+    console.log(2)
+    Object.assign(dbConfig,  {
       type: 'sqlite',
       database: 'test.sqlite',
       entities: ['**/*.entity.ts'],
-      migrationsRun: true,
+      // migrationsRun: true,
     });
     break;
-  case 'production':
-    break;
+  // case 'production':
+  //   break;
   default:
     throw new Error('unknown environment');
 }

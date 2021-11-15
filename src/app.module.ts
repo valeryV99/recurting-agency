@@ -48,7 +48,7 @@ export class AppModule {
     consumer
       .apply(
         cookieSession({
-          keys: [this.configService.get('COOKIE_KEY')],
+          keys: ['key1','key2'],
         }),
       )
       .forRoutes('*');
