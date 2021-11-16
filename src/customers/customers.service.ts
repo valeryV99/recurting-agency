@@ -11,7 +11,11 @@ export class CustomersService {
 
   create(customerDto: CreateCustomerDto, user: User) {
     const customer = this.repo.create(customerDto);
-    customer.id = user.id;
+    // customer.id = user.id;
     return this.repo.save(customer);
+  }
+
+  getAll() {
+    return this.repo.find();
   }
 }

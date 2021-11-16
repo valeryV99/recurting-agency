@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import { CustomersService } from './customers.service';
 import { Serialize } from '../interceptors/serialize.interceptor';
 import { CustomerDto } from './dtos/customer.dto';
@@ -15,5 +15,12 @@ export class CustomersController {
   @Serialize(CustomerDto)
   createCustomer(@Body() body: CreateCustomerDto, @CurrentUser() user: User) {
     return this.customersService.create(body, user);
+  }
+
+  @Get()
+  @UseGuards()
+  @Serialize(CustomerDto)
+  getCustomers() {
+    return this.customersService.getAll();
   }
 }
