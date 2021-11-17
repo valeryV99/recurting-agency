@@ -1,4 +1,4 @@
-import { IsString, IsNumber, IsDateString } from 'class-validator';
+import { IsString, IsNumber } from 'class-validator';
 
 export class CreatePositionDto {
   @IsString()
@@ -10,17 +10,17 @@ export class CreatePositionDto {
   @IsString()
   skills: string;
 
-  @IsNumber()
-  status: number;
+  @IsString()
+  status: string;
 
   @IsString()
   requirements: string;
 
-  @IsDateString()
-  startDate: Date;
+  @IsString()
+  startDate: string;
 
-  @IsDateString()
-  endDate: Date;
+  @IsString()
+  endDate: string;
 
   @IsString()
   customerId: string;

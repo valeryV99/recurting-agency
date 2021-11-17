@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { CustomersService } from './customers.service';
 import { Serialize } from '../interceptors/serialize.interceptor';
 import { CustomerDto } from './dtos/customer.dto';
@@ -22,5 +22,13 @@ export class CustomersController {
   @Serialize(CustomerDto)
   getCustomers() {
     return this.customersService.getAll();
+  }
+
+  @Get('/:id')
+  @UseGuards()
+  @Serialize(CustomerDto)
+  getCustomer(@Param('id') id: string) {
+    console.log(id,'id');
+    return this.customersService.getById(id);
   }
 }

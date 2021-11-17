@@ -26,16 +26,16 @@ export class Position {
   skills: string;
 
   @Column()
-  status: number;
+  status: string;
 
   @Column()
   requirements: string;
 
   @Column()
-  startDate: Date;
+  startDate: string;
 
   @Column()
-  endDate: Date;
+  endDate: string;
 
   @OneToMany(() => Interview, (interview) => interview.candidate)
   interview: Interview[];

@@ -18,4 +18,9 @@ export class CustomersService {
   getAll() {
     return this.repo.find();
   }
+
+  getById(id: string) {
+    return this.repo.findOne(id);
+  }
+
 }

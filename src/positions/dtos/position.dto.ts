@@ -8,22 +8,22 @@ export class PositionDto {
   position: string;
 
   @Expose()
-  salary: number;
+  salary: string;
 
   @Expose()
   skills: string;
 
   @Expose()
-  status: number;
+  status: string;
 
   @Expose()
   requirements: string;
 
   @Expose()
-  startDate: Date;
+  startDate: string;
 
   @Expose()
-  endDate: Date;
+  endDate: string;
 
   @Expose()
   customerId: string;
