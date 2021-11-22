@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { PositionsService } from './positions.service';
 import { Serialize } from '../interceptors/serialize.interceptor';
 import { PositionDto } from './dtos/position.dto';
@@ -13,5 +13,19 @@ export class PositionsController {
   @Serialize(PositionDto)
   createPosition(@Body() body: CreatePositionDto) {
     return this.positionsService.create(body);
+  }
+
+  @Get()
+  @UseGuards()
+  @Serialize(PositionDto)
+  getPositions() {
+    return this.positionsService.getAll();
+  }
+
+  @Get('/:customerId')
+  @UseGuards()
+  @Serialize(PositionDto)
+  getPositionsByCustomerId(@Param('customerId') customerId: string) {
+    return this.positionsService.getByCustomerId(customerId);
   }
 }

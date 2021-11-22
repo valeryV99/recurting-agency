@@ -13,4 +13,12 @@ export class PositionsService {
 
     return this.repo.save(position);
   }
+
+  getAll() {
+    return this.repo.find();
+  }
+
+  getByCustomerId(customerId: string) {
+    return this.repo.find({customerId})
+  }
 }

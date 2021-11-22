@@ -15,7 +15,11 @@ export class CandidatesService {
 
   async create(candidateDto: CreateCandidateDto, userId: User['id']) {
     const candidate = this.repo.create(candidateDto);
-    candidate.recruiter = await this.recruitersService.findOne(userId);
+    candidate.recruiter = await this.recruitersService.findOne(candidateDto.recruiterId);
     return this.repo.save(candidate);
+  }
+
+  findAll() {
+    return this.repo.find();
   }
 }

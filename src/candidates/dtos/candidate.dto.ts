@@ -21,7 +21,6 @@ export class CandidateDto {
   possible_position: string;
   @Expose()
   status: string;
-  @Transform(({ obj }) => obj.recruiter.id)
   @Expose()
   recruiterId: string;
 }

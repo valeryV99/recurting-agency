@@ -1,4 +1,4 @@
-import { Controller, Post, Body, UseGuards } from '@nestjs/common';
+import { Controller, Post, Body, UseGuards, Get } from '@nestjs/common';
 import { CandidatesService } from './candidates.service';
 import { AuthGuard } from '../guards/auth.guard';
 import { Serialize } from '../interceptors/serialize.interceptor';
@@ -16,5 +16,12 @@ export class CandidatesController {
   @Serialize(CandidateDto)
   createCandidate(@Body() body: CreateCandidateDto, @CurrentUser() user: User) {
     return this.candidateService.create(body, user.id);
+  }
+
+  @Get()
+  @UseGuards(AuthGuard)
+  @Serialize(CandidateDto)
+  getAll() {
+    return this.candidateService.findAll();
   }
 }
