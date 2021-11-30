@@ -14,11 +14,13 @@ export class CandidateDto {
   @Expose()
   birth: string;
   @Expose()
-  residence_address: string;
+  residenceAddress: string;
+  @Expose()
+  skills: string;
   @Expose()
   education: string;
   @Expose()
-  possible_position: string;
+  possiblePosition: string;
   @Expose()
   status: string;
   @Expose()

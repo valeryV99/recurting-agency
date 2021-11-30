@@ -17,11 +17,11 @@ export class Interview {
   @Column('uuid')
   candidateId: string;
 
-  @Column('timestamp', {
-    name: 'date',
-    default: (): string => 'LOCALTIMESTAMP',
-  })
-  date?: Date;
+  @Column('uuid')
+  positionId: string;
+
+  @Column()
+  interviewDate: string;
 
   @ManyToOne(() => Candidate, (candidate) => candidate.interview)
   candidate: Candidate;

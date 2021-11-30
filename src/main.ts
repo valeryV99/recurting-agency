@@ -16,9 +16,7 @@ async function bootstrap() {
     next();
   });
 
-
-  const config = new DocumentBuilder()
-    .build();
+  const config = new DocumentBuilder().build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 

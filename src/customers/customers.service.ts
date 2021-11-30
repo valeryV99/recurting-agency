@@ -22,5 +22,4 @@ export class CustomersService {
   getById(id: string) {
     return this.repo.findOne(id);
   }
-
 }

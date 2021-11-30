@@ -12,6 +12,7 @@ export class RecruitersController {
   constructor(private recruitersService: RecruitersService) {}
 
   @Get()
+  @Serialize(RecruiterDto)
   getAllRecruiters() {
     return this.recruitersService.getAll();
   }

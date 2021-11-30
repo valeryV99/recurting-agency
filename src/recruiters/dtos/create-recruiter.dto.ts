@@ -1,6 +1,7 @@
 import { IsString } from 'class-validator';
 
 export class CreateRecruiterDto {
+
   @IsString()
   photo: string;
 

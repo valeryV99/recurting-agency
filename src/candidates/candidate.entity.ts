@@ -8,14 +8,13 @@ import {
 import { Recruiter } from '../recruiters/recruiter.entity';
 import { Interview } from '../interviews/interview.entity';
 
-
 @Entity()
 export class Candidate {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column('uuid')
-  recruiterId
+  recruiterId;
 
   @Column()
   photo: string;
@@ -42,7 +41,7 @@ export class Candidate {
   skills: string;
 
   @Column()
-  desiredSalary: number
+  desiredSalary: number;
 
   @Column('uuid')
   possiblePosition: string;

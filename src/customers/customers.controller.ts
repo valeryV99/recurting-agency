@@ -28,7 +28,7 @@ export class CustomersController {
   @UseGuards()
   @Serialize(CustomerDto)
   getCustomer(@Param('id') id: string) {
-    console.log(id,'id');
+    console.log(id, 'id');
     return this.customersService.getById(id);
   }
 }
