@@ -11,10 +11,10 @@ export class CreateInterviewResultDto {
   teamwork: number;
 
   @IsNumber()
-  attention_to_detail: number;
+  attentionToDetail: number;
 
   @IsNumber()
-  self_motivation: number;
+  selfMotivation: number;
 
   @IsString()
   interviewId: string;

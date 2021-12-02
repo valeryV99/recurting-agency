@@ -15,4 +15,8 @@ export class InterviewsService {
 
     return this.repo.save(interview);
   }
+
+  getAll() {
+    return this.repo.find();
+  }
 }

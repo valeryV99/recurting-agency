@@ -22,10 +22,10 @@ export class InterviewResult {
   teamwork: number;
 
   @Column()
-  attention_to_detail: number;
+  attentionToDetail: number;
 
   @Column()
-  self_motivation: number;
+  selfMotivation: number;
 
   @OneToOne(() => Interview)
   @JoinColumn()

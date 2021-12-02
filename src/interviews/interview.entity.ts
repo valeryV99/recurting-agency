@@ -30,5 +30,5 @@ export class Interview {
   interview: Position[];
 
   @OneToOne(() => InterviewResult)
-  interview_result: InterviewResult;
+  interviewResult: InterviewResult;
 }

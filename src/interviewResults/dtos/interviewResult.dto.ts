@@ -10,9 +10,9 @@ export class InterviewResultDto {
   @Expose()
   teamwork: number;
   @Expose()
-  attention_to_detail: number;
+  attentionToDetail: number;
   @Expose()
-  self_motivation: number;
+  selfMotivation: number;
 
   @Expose()
   interviewId: string;
