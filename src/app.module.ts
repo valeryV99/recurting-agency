@@ -9,9 +9,9 @@ import { ReportsModule } from './reports/reports.module';
 import { RecruitersModule } from './recruiters/recruiters.module';
 import { CandidatesModule } from './candidates/candidates.module';
 import { InterviewsModule } from './interviews/interviews.module';
-import { InterviewResultsModule } from './interviewResults/interviewResults.module';
 import { PositionsModule } from './positions/positions.module';
 import { CustomersModule } from './customers/customers.module';
+import { EmployeesModule } from './employees/employees.module';
 const cookieSession = require('cookie-session');
 
 @Module({
@@ -26,9 +26,9 @@ const cookieSession = require('cookie-session');
     RecruitersModule,
     CandidatesModule,
     InterviewsModule,
-    InterviewResultsModule,
     PositionsModule,
     CustomersModule,
+    EmployeesModule
   ],
   controllers: [AppController],
   providers: [

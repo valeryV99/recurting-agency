@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Position } from '../positions/position.entity';
-import { Recruiter } from '../recruiters/recruiter.entity';
+import { Recruiter } from '../recruiters/recruiter.entity';;
 
 @Entity()
 export class Customer {
@@ -15,7 +15,7 @@ export class Customer {
   id: string;
 
   @Column()
-  customer_name: string;
+  customerName: string;
 
   @Column()
   address: string;

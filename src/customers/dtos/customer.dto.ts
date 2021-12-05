@@ -4,7 +4,7 @@ export class CustomerDto {
   @Expose()
   id: string;
   @Expose()
-  customer_name: string;
+  customerName: string;
   @Expose()
   address: string;
 }

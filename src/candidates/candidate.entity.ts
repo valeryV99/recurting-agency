@@ -43,9 +43,6 @@ export class Candidate {
   @Column()
   desiredSalary: number;
 
-  @Column('uuid')
-  possiblePosition: string;
-
   @Column()
   status: string;
 

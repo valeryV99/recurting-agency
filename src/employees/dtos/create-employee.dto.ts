@@ -1,7 +1,7 @@
-import { IsNumber, IsNumberString, IsString } from 'class-validator';
+import { IsNumberString, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateCandidateDto {
+export class CreateEmployeeDto {
   @ApiProperty({
     description: 'ссылка на фото кандидата',
     example: 'https://img.com/img-1',
@@ -72,4 +72,7 @@ export class CreateCandidateDto {
   })
   @IsString()
   status: string;
+
+  @IsString()
+  customerId: string;
 }
